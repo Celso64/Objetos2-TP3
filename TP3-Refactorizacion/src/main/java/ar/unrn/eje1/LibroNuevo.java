@@ -1,0 +1,24 @@
+package ar.unrn.eje1;
+
+public class LibroNuevo extends Libro {
+
+	private final Double RECARGO = 3.0;
+
+	private final Integer PUNTOS_BASE = 1;
+	private final Integer PUNTOS_CON_BONUS = 2;
+
+	public LibroNuevo(String nombre) {
+		super.nombre = nombre;
+	}
+
+	@Override
+	public Double calcularMonto(Integer diasAlquilados) {
+		return diasAlquilados * RECARGO;
+	}
+
+	@Override
+	public Integer calcularPuntos(Integer diasAlquilados) {
+		return (diasAlquilados > 1) ? PUNTOS_BASE : PUNTOS_CON_BONUS;
+	}
+
+}
