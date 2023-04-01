@@ -2,6 +2,7 @@ package ar.unrn.eje1;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Cliente {
 	private List<Alquiler> alquileres = new ArrayList<Alquiler>();
@@ -9,7 +10,7 @@ public class Cliente {
 	private String name;
 
 	public Cliente(String nombre) {
-		this.name = nombre;
+		this.name = Objects.requireNonNull(nombre);
 	}
 
 	/*

@@ -1,11 +1,13 @@
 package ar.unrn.eje3;
 
+import java.util.Objects;
+
 public class GastoAlquilerAuto extends Gasto {
 
 	private static final String NOMBRE = "Alquiler de Auto";
 
-	public GastoAlquilerAuto(int monto) {
-		super.monto = monto;
+	public GastoAlquilerAuto(Integer monto) {
+		super.monto = Objects.requireNonNull(monto);
 	}
 
 	@Override

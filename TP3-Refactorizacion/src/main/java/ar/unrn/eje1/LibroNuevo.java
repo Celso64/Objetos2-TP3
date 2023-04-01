@@ -1,5 +1,7 @@
 package ar.unrn.eje1;
 
+import java.util.Objects;
+
 public class LibroNuevo extends Libro {
 
 	private final Double RECARGO = 3.0;
@@ -8,7 +10,7 @@ public class LibroNuevo extends Libro {
 	private final Integer PUNTOS_CON_BONUS = 2;
 
 	public LibroNuevo(String nombre) {
-		super.nombre = nombre;
+		super.nombre = Objects.requireNonNull(nombre);
 	}
 
 	@Override

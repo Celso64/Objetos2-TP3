@@ -1,12 +1,14 @@
 package ar.unrn.eje3;
 
+import java.util.Objects;
+
 public class GastoDesayuno extends Gasto {
 
 	private static final String NOMBRE = "Desayuno";
 	private static final Integer GASTO_ALTO = 1000;
 
-	public GastoDesayuno(int monto) {
-		super.monto = monto;
+	public GastoDesayuno(Integer monto) {
+		super.monto = Objects.requireNonNull(monto);
 	}
 
 	@Override
