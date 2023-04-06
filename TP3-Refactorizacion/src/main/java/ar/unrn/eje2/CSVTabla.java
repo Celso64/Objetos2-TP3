@@ -8,12 +8,12 @@ import java.util.Objects;
 
 import com.opencsv.CSVReader;
 
-class CSV {
+class CSVTabla implements Tabla {
 
 	private List<String> csvNombreColumnas;
 	private List<String[]> csvDatos;
 
-	CSV(CSVReader reader) {
+	CSVTabla(CSVReader reader) {
 
 		Objects.requireNonNull(reader);
 		this.csvDatos = new ArrayList<>();
@@ -23,7 +23,7 @@ class CSV {
 		this.csvDatos.remove(0);
 	}
 
-	void filtrarPorColumna(String columna, String valorFiltro) {
+	public void filtrarPorColumna(String columna, String valorFiltro) {
 
 		if (!this.csvNombreColumnas.contains(columna))
 			throw new RuntimeException("La columna no existe");
@@ -32,7 +32,8 @@ class CSV {
 		csvDatos = csvDatos.stream().filter(x -> x[clave].equals(valorFiltro)).toList();
 	}
 
-	List<Map<String, String>> generarTabla() {
+	@Override
+	public List<Map<String, String>> generarTabla() {
 
 		List<Map<String, String>> tabla = new ArrayList<>();
 

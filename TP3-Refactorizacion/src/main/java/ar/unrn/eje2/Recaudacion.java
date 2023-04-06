@@ -13,13 +13,13 @@ public class Recaudacion {
 
 		// Encapsule las manipulaciones referentes a los datos del .csv en la clase CSV
 		// Extrai las clases Main y NoSuchEntryException y las puse en archivos propios
-		CSV csv = new CSV(new CSVReader(new FileReader("data.csv")));
+		Tabla tabla = new CSVTabla(new CSVReader(new FileReader("data.csv")));
 
 		List<String> claves = new ArrayList<>(options.keySet());
 
-		claves.forEach(x -> csv.filtrarPorColumna(x, options.get(x)));
+		claves.forEach(x -> tabla.filtrarPorColumna(x, options.get(x)));
 
-		return csv.generarTabla();
+		return tabla.generarTabla();
 	}
 
 }

@@ -20,7 +20,7 @@ class TestEjercicio1 {
 	@Test
 	void alquilarLibroRegularUnDia() {
 
-		libro = new LibroRegular("La milla verde");
+		libro = new LibroRegular("La Milla Verde");
 		copia = new CopiaLibro(libro);
 
 		cliente.alquilar(copia, 1);
@@ -33,7 +33,7 @@ class TestEjercicio1 {
 	@Test
 	void alquilarLibroRegularTresDias() {
 
-		libro = new LibroRegular("La milla verde");
+		libro = new LibroRegular("La Milla Verde");
 		copia = new CopiaLibro(libro);
 
 		cliente.alquilar(copia, 3);
